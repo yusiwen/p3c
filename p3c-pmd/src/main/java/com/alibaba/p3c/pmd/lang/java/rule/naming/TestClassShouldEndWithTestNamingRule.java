@@ -40,6 +40,8 @@ public class TestClassShouldEndWithTestNamingRule extends AbstractJUnitRule {
             return super.visit(node, data);
         }
 
+        analyzeJUnitClass(node);
+
         List<ASTMethodDeclaration> m = node.findDescendantsOfType(ASTMethodDeclaration.class);
         boolean testsFound = false;
 
